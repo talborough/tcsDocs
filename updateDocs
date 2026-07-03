@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+#
+# Update docs in tcsDocs repo from docs in testingComplexSystems repo
+#
+
+cp ~/testingComplexSystems/gDS_V2/README.md ~/tcsDocs/docs/README_gDS.md
+cp ~/testingComplexSystems/caseStudy_01/README.md ~/tcsDocs/docs/README_CS01.md
+cp ~/testingComplexSystems/caseStudy_02/README.md ~/tcsDocs/docs/README_CS02.md
+cp ~/testingComplexSystems/caseStudy_03/README.md ~/tcsDocs/docs/README_CS03.md
+cp ~/testingComplexSystems/caseStudy_04/README.md ~/tcsDocs/docs/README_CS04.md

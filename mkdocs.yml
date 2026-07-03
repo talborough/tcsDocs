@@ -1,0 +1,14 @@
+site_name: Testing Complex Systems GitHub Repo Documentation
+
+nav:
+  - Home: README.md
+
+  - gDS V2:
+      - Overview: README_gDS.md
+      - gDSCompile Details: gDSCompiler-keywords-and-naming.md
+      - gDSExer Details: gDSExer-keywords-and-naming.md
+
+  - Case Study 01: README_CS01.md
+  - Case Study 02: README_CS02.md
+  - Case Study 03: README_CS03.md
+  - Case Study 04: README_CS04.md
