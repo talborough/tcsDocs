@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>gDSCompile Details - Testing Complex Systems GitHub Repo Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Testing Complex Systems GitHub Repo Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">gDS V2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../README_gDS/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">gDSCompile Details</a>
+</li>
+                                    
+<li>
+    <a href="../gDSExer-keywords-and-naming/" class="dropdown-item">gDSExer Details</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS01/" class="nav-link">Case Study 01</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS02/" class="nav-link">Case Study 02</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS03/" class="nav-link">Case Study 03</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS04/" class="nav-link">Case Study 04</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../README_gDS/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../gDSExer-keywords-and-naming/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#gds-compiler-schema-language-dd-files" class="nav-link">gDS Compiler — Schema Language (.dd files)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#how-to-write-a-line" class="nav-link">How to write a line</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#table-block" class="nav-link">Table block</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#rules-the-compiler-checks" class="nav-link">Rules the compiler checks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#extra-values-on-each-line" class="nav-link">Extra values on each line</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#naming-rules" class="nav-link">Naming rules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-python-code-gets-generated" class="nav-link">What Python code gets generated</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#compiler-command" class="nav-link">Compiler command</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#full-tiny-example" class="nav-link">Full tiny example</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gds-compiler-schema-language-dd-files">gDS Compiler — Schema Language (<code>.dd</code> files)</h1>
+<p>This document lists the words (keywords) you can use in a schema - <code>.dd</code> file and the naming rules the compiler enforces.</p>
+<p><strong>gDSCompile</strong> reads <code>something.dd</code> and writes <code>something.py</code>.</p>
+<hr />
+<h2 id="how-to-write-a-line">How to write a line</h2>
+<p>Each line is one instruction:</p>
+<pre><code class="language-text">&lt;keyword&gt; &lt;name&gt; [&lt;extra-value&gt; …]
+</code></pre>
+<ul>
+<li>Words are separated by spaces.</li>
+<li><code>#</code> starts a comment (rest of line is ignored).</li>
+<li>A <strong>keyword</strong> is a special word from the tables below.</li>
+<li>A <strong>name</strong> is your table or column name.</li>
+<li>An <strong>extra value</strong> can be <code>None</code>, a number, or another name. Most lines have zero, one, or two extra values.</li>
+</ul>
+<hr />
+<h2 id="table-block">Table block</h2>
+<p>A normal table looks like this:</p>
+<pre><code class="language-text">defineTable  gAnimal
+defineName        gAnimal_Name
+defineColumn      gAnimal_Kind          None
+defineOneRef      gAnimal_gFarm_Ref     gFarm
+defineRowStatus   gAnimal_RowStatus     None
+endTable
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defineTable</code></td>
+<td>Start a table. Next word is the table name.</td>
+</tr>
+<tr>
+<td><code>endTable</code></td>
+<td>End the table.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="column-keywords-go-inside-definetable-endtable">Column keywords (go inside <code>defineTable</code> … <code>endTable</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Stored as</th>
+<th>Plain English</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defineColumn</code></td>
+<td>Python list</td>
+<td>One value per row (Kind, Age, …)</td>
+</tr>
+<tr>
+<td><code>defineName</code></td>
+<td>Python list</td>
+<td>The name of each row — <strong>required, one per table</strong></td>
+</tr>
+<tr>
+<td><code>defineRowStatus</code></td>
+<td>Python list</td>
+<td>A status flag per row — <strong>required, one per table, must be last</strong></td>
+</tr>
+<tr>
+<td><code>defineOneRef</code></td>
+<td>Python list</td>
+<td>One row number pointing into another table</td>
+</tr>
+<tr>
+<td><code>defineManyRefs</code></td>
+<td>Python list</td>
+<td>A list of row numbers pointing into another table</td>
+</tr>
+<tr>
+<td><code>defineIndexOneRef</code></td>
+<td>Python dict</td>
+<td>Quick lookup for a one-ref column</td>
+</tr>
+<tr>
+<td><code>defineIndexManyRefs</code></td>
+<td>Python dict</td>
+<td>Quick lookup for a many-refs column</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stand-alone-items-not-inside-a-table-block">Stand-alone items (NOT inside a table block)</h3>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defineUnary</code></td>
+<td>One single value (not a table). First extra value = starting value (<strong>required</strong>).</td>
+</tr>
+<tr>
+<td><code>defineList</code></td>
+<td>One Python list</td>
+</tr>
+<tr>
+<td><code>defineDict</code></td>
+<td>One Python dictionary</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="rules-the-compiler-checks">Rules the compiler checks</h2>
+<p>The schema syntax and semantics are managed at two levels. The <em>keywords</em> stand on their own and specify a complete interface. As well, the <em>naming conventions</em> specify a complete interface. There is duplication between the levels - <em>something</em> is needed at both levels so the two specifictions end up matching each other.</p>
+<p>Here are some top-level rules:</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Legal words only</td>
+<td>Use only the keywords above</td>
+</tr>
+<tr>
+<td>Balanced blocks</td>
+<td>Every <code>defineTable</code> has a matching <code>endTable</code></td>
+</tr>
+<tr>
+<td>Unique names</td>
+<td>No two tables or columns with the same name</td>
+</tr>
+<tr>
+<td>Name column</td>
+<td>Exactly one <code>defineName</code> per table</td>
+</tr>
+<tr>
+<td>RowStatus column</td>
+<td>Exactly one <code>defineRowStatus</code> per table; it must be the last line before <code>endTable</code></td>
+</tr>
+<tr>
+<td>References</td>
+<td>A ref must point at a real table (not itself). Refs cannot go in a circle.</td>
+</tr>
+<tr>
+<td>Indexes</td>
+<td>Must say which column they index</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="extra-values-on-each-line">Extra values on each line</h2>
+<p>Most extra values become <strong>default arguments</strong> when you add a row (<code>AddARow</code>). Ref and index lines use the first extra value differently:</p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>1st extra value</th>
+<th>2nd extra value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defineColumn</code></td>
+<td>Default when adding a row</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>defineName</code></td>
+<td>Default for name (usually unused)</td>
+<td>Another default (rare)</td>
+</tr>
+<tr>
+<td><code>defineRowStatus</code></td>
+<td>Default when adding a row</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>defineOneRef</code></td>
+<td><strong>Which table</strong> this points to (<strong>required</strong>)</td>
+<td>Default when adding a row</td>
+</tr>
+<tr>
+<td><code>defineManyRefs</code></td>
+<td><strong>Which table</strong> this points to (<strong>required</strong>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>defineIndexOneRef</code></td>
+<td><strong>Which column</strong> to index (<strong>required</strong>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>defineIndexManyRefs</code></td>
+<td><strong>Which column</strong> to index (<strong>required</strong>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>defineUnary</code></td>
+<td><strong>Starting value</strong> (<strong>required</strong>)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="naming-rules">Naming rules</h2>
+<p>The compiler will <strong>reject</strong> bad names. Patterns:</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Rule</th>
+<th>Good example</th>
+<th>Bad example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Table</td>
+<td>No <code>_</code> in the name</td>
+<td><code>gAnimal</code></td>
+<td><code>g_Animal</code></td>
+</tr>
+<tr>
+<td>Any column</td>
+<td>Starts with <code>{table}_</code></td>
+<td><code>gAnimal_Kind</code></td>
+<td><code>Kind</code></td>
+</tr>
+<tr>
+<td>Name column</td>
+<td>Ends with <code>_Name</code></td>
+<td><code>gFarm_Name</code></td>
+<td><code>gFarm_Title</code></td>
+</tr>
+<tr>
+<td>RowStatus</td>
+<td>Ends with <code>_RowStatus</code></td>
+<td><code>gFarm_RowStatus</code></td>
+<td><code>gFarm_Status</code></td>
+</tr>
+<tr>
+<td>One ref</td>
+<td>Ends with <code>_Ref</code>, three parts</td>
+<td><code>gFarm_gAnimal_Ref</code></td>
+<td><code>gFarm_Animal</code></td>
+</tr>
+<tr>
+<td>Many refs</td>
+<td>Ends with <code>_Refs</code>, three parts</td>
+<td><code>gFarm_gHouse_Refs</code></td>
+<td><code>gFarm_Houses</code></td>
+</tr>
+<tr>
+<td>Index (one)</td>
+<td>Ends with <code>_2Ref</code></td>
+<td><code>gAnimal_Name_2Ref</code></td>
+<td><code>gAnimal_NameIndex</code></td>
+</tr>
+<tr>
+<td>Index (many)</td>
+<td>Ends with <code>_2Refs</code></td>
+<td><code>gFarm_gHouse_2Refs</code></td>
+<td><code>gFarm_Index</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ref name pattern:</strong> <code>{yourTable}_{otherTable}_Ref</code> — the middle part must match the table named in the 1st extra value.</p>
+<pre><code class="language-text">defineOneRef    gFarm_gAnimal_Ref   gAnimal
+defineManyRefs  gFarm_gHouse_Refs   gHouse
+</code></pre>
+<p><strong>Index pattern:</strong> the 1st extra value names the column being indexed.</p>
+<pre><code class="language-text">defineIndexOneRef  gAnimal_Name_2Ref   gAnimal_Name
+</code></pre>
+<p><strong>Bare name</strong> — the part after the first <code>_</code> in a column name (<code>Kind</code> from <code>gAnimal_Kind</code>). Used in printouts and gDSExer prompts.</p>
+<hr />
+<h2 id="what-python-code-gets-generated">What Python code gets generated</h2>
+<p>For each table <code>gAnimal</code>, the compiler writes functions like:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gAnimal_AddARow(...)</code></td>
+<td>Add a row</td>
+</tr>
+<tr>
+<td><code>gAnimal_DeleteRows(...)</code></td>
+<td>Delete rows; returns a <strong>RAL</strong></td>
+</tr>
+<tr>
+<td><code>gAnimal_DumpRows(...)</code></td>
+<td>Print the table</td>
+</tr>
+<tr>
+<td><code>gAnimal_WriteToFile</code> / <code>_ReadFromFile</code></td>
+<td>Save or load JSON</td>
+</tr>
+</tbody>
+</table>
+<p>For each pointer column from <code>gFarm</code> into <code>gAnimal</code>, it also writes:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One pointer</td>
+<td><code>gFarm_ApplyRALTo_gAnimal_Ref</code></td>
+</tr>
+<tr>
+<td>Many pointers</td>
+<td><code>gFarm_ApplyRALTo_gAnimal_Refs</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>RAL</strong> = after a delete, a list that says “old row 2 is now row 1” or “old row 1 is gone.”</p>
+<p>By default, columns use <strong>shared-memory</strong> lists (so multiple programs can see the same data). Use flag <strong><code>-O</code></strong> for normal Python <code>[]</code> and <code>{}</code>.</p>
+<hr />
+<h2 id="compiler-command">Compiler command</h2>
+<pre><code class="language-bash">./gDSCompile mySchema.dd
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-v</code></td>
+<td>More printout while compiling</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>Show internal tables (debugging)</td>
+</tr>
+<tr>
+<td><code>-O</code></td>
+<td>Normal lists, not shared-memory</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="full-tiny-example">Full tiny example</h2>
+<pre><code class="language-text">defineTable       gAnimal
+defineName        gAnimal_Name
+defineColumn      gAnimal_Kind          None
+defineOneRef      gAnimal_gFarm_Ref     gFarm
+defineIndexOneRef gAnimal_Name_2Ref     gAnimal_Name
+defineRowStatus   gAnimal_RowStatus     None
+endTable
+</code></pre>
+<p>This produces code to create the necesssary tables plus helper routines <code>gAnimal_AddARow</code>, <code>gAnimal_DeleteRows</code>, <code>gAnimal_ApplyRALTo_gFarm_Ref</code>, and the rest in <code>mySchema.py</code>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

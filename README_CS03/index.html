@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Case Study 03 - Testing Complex Systems GitHub Repo Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Testing Complex Systems GitHub Repo Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">gDS V2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../README_gDS/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../gDSCompiler-keywords-and-naming/" class="dropdown-item">gDSCompile Details</a>
+</li>
+                                    
+<li>
+    <a href="../gDSExer-keywords-and-naming/" class="dropdown-item">gDSExer Details</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS01/" class="nav-link">Case Study 01</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS02/" class="nav-link">Case Study 02</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Case Study 03</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS04/" class="nav-link">Case Study 04</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../README_CS02/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../README_CS04/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#nfstest" class="nav-link">nfsTest</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#what-is-this" class="nav-link">What is this?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-computers-involved" class="nav-link">The computers involved</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#files-in-this-folder" class="nav-link">Files in this folder</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-you-need-before-starting" class="nav-link">What you need before starting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#first-time-setup" class="nav-link">First-time setup</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#using-the-program" class="nav-link">Using the program</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#how-it-works-simple-version" class="nav-link">How it works (simple version)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#big-picture" class="nav-link">Big picture</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#quick-reference" class="nav-link">Quick reference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="nfstest">nfsTest</h1>
+<p><strong>A hands-on lab for testing shared folders across Linux computers</strong></p>
+<p>This project is part of <a href="https://TestingComplexSystems.com">Case Study 3</a> from TestingComplexSystems.com. It is meant for learning how complex computer systems behave when things go wrong — not for everyday file sharing.</p>
+<p>This has <em>not</em> been converted to use gDS V2 yet!</p>
+<hr />
+<h2 id="what-is-this">What is this?</h2>
+<p>Imagine you have several Linux computers on a network. One computer <strong>shares</strong> a folder, and the others <strong>use</strong> that folder as if it were on their own machine. That sharing system is called <strong>NFS</strong> (Network File System).</p>
+<p><strong>nfsTest</strong> is a program that:</p>
+<ol>
+<li>Sets up NFS sharing between multiple computers (called <strong>hosts</strong>)</li>
+<li>Starts programs that <strong>read and write files</strong> on those shared folders</li>
+<li>Lets you <strong>stress-test</strong> the setup — reboot a computer, swap roles, pause work, and more</li>
+<li><strong>Checks</strong> that data stays correct and reports problems if something breaks</li>
+</ol>
+<p>Think of it like a science experiment: you build a small network, run workloads on it, poke at it, and watch what happens.</p>
+<hr />
+<h2 id="the-computers-involved">The computers involved</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control host</strong></td>
+<td>The computer where you run <code>./nfsTest</code>. It sends commands to the others over SSH (secure remote login).</td>
+</tr>
+<tr>
+<td><strong>Server host(s)</strong></td>
+<td>Share folders over NFS so other computers can use them.</td>
+</tr>
+<tr>
+<td><strong>Client host(s)</strong></td>
+<td>Connect to shared folders and run read/write tests on them.</td>
+</tr>
+</tbody>
+</table>
+<p>You need at least <strong>one server</strong> and <strong>one client</strong>, plus the control host (often the same machine you use to run nfsTest).</p>
+<hr />
+<h2 id="files-in-this-folder">Files in this folder</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nfsTest</code></td>
+<td>The main program — menu, setup, and test control</td>
+</tr>
+<tr>
+<td><code>nfsTest.conf</code></td>
+<td>Your settings (created on first run — see below)</td>
+</tr>
+<tr>
+<td><code>nfsTest.dd</code></td>
+<td>Data definitions used to build internal tables</td>
+</tr>
+<tr>
+<td><code>nfsTest.py</code></td>
+<td>Generated code from <code>nfsTest.dd</code> (you do not edit this by hand)</td>
+</tr>
+<tr>
+<td><code>ioEngine</code></td>
+<td>Writes and reads test files on a shared folder; checks for errors</td>
+</tr>
+<tr>
+<td><code>appendALine</code> / <code>removeALine</code></td>
+<td>Small helpers used during NFS setup on remote hosts</td>
+</tr>
+<tr>
+<td><code>One.scr</code></td>
+<td>Example script that runs a sequence of commands automatically</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="what-you-need-before-starting">What you need before starting</h2>
+<h3 id="software-on-the-control-host">Software (on the control host)</h3>
+<ul>
+<li><strong>Linux</strong> (Ubuntu works well)</li>
+<li><strong>Python 3</strong></li>
+<li><strong>Paramiko</strong> (Python SSH library):</li>
+</ul>
+<p><code>bash
+  sudo apt install python3-paramiko</code></p>
+<h3 id="test-computers-vms-or-real-machines">Test computers (VMs or real machines)</h3>
+<p>Each test host should:</p>
+<ol>
+<li>Run Linux (Ubuntu is fine)</li>
+<li>Be reachable from the control host (ping works)</li>
+<li>Have <strong>SSH server</strong> installed:</li>
+</ol>
+<p><code>bash
+   sudo apt update
+   sudo apt install openssh-server
+   sudo systemctl status ssh</code></p>
+<ol>
+<li>Use the <strong>same username and password</strong> on all machines (with <code>sudo</code> access). nfsTest uses password login, not SSH keys.</li>
+</ol>
+<h3 id="build-step-one-time">Build step (one time)</h3>
+<p>nfsTest needs a generated file called <code>nfsTest.py</code>. From this directory, run:</p>
+<pre><code class="language-bash">../gDS/gDSCodeGen nfsTest
+</code></pre>
+<p>That reads <code>nfsTest.dd</code> and creates <code>nfsTest.py</code>. If <code>nfsTest.py</code> is missing or older than <code>nfsTest.dd</code>, nfsTest will exit and tell you to run this command.</p>
+<hr />
+<h2 id="first-time-setup">First-time setup</h2>
+<h3 id="step-1-run-nfstest-once-to-create-the-config-file">Step 1: Run nfsTest once to create the config file</h3>
+<pre><code class="language-bash">chmod +x nfsTest ioEngine appendALine removeALine
+./nfsTest
+</code></pre>
+<p>The program creates <strong><code>nfsTest.conf</code></strong> and exits. Open that file in a text editor.</p>
+<h3 id="step-2-edit-nfstestconf">Step 2: Edit <code>nfsTest.conf</code></h3>
+<p>Fill in your real values. Example:</p>
+<pre><code class="language-ini">username = myuser
+password = mypassword
+
+serverCount = 1
+clientCount = 2
+
+exportFSPerHost = 2
+fsUserPerImportFS = 3
+
+testhostIdentifier = 192.168.1.101
+testhostIdentifier = 192.168.1.102
+testhostIdentifier = 192.168.1.103
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Meaning (in plain English)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>username</code> / <code>password</code></td>
+<td>Login used on every host</td>
+</tr>
+<tr>
+<td><code>serverCount</code></td>
+<td>How many hosts act as NFS servers</td>
+</tr>
+<tr>
+<td><code>clientCount</code></td>
+<td>How many hosts act as NFS clients</td>
+</tr>
+<tr>
+<td><code>exportFSPerHost</code></td>
+<td>Max shared folders per server host</td>
+</tr>
+<tr>
+<td><code>fsUserPerImportFS</code></td>
+<td>Max read/write workers per mounted share</td>
+</tr>
+<tr>
+<td><code>testhostIdentifier</code></td>
+<td>IP address or hostname of each test machine (need at least <code>serverCount + clientCount</code> entries)</td>
+</tr>
+</tbody>
+</table>
+<p>Save the file, then run nfsTest again:</p>
+<pre><code class="language-bash">./nfsTest
+</code></pre>
+<p>It will ping each host, connect over SSH, and show a live status screen.</p>
+<hr />
+<h2 id="using-the-program">Using the program</h2>
+<h3 id="the-main-screen">The main screen</h3>
+<p>After startup you see a dashboard with host states, counters, and a command prompt. Press <strong>Enter</strong> with no command to show or hide the help menu.</p>
+<p>On first run, nfsTest may ask if you want to:</p>
+<ul>
+<li><strong><code>cleanall</code></strong> — reset and install software on test hosts</li>
+<li><strong><code>ss</code></strong> — start state machine threads (prepare the test platform)</li>
+<li><strong><code>aa</code></strong> — activate everything (start NFS sharing and I/O)</li>
+</ul>
+<p>You can also type these commands yourself at the prompt.</p>
+<h3 id="common-commands">Common commands</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>help</code></td>
+<td>Show help (same as toggling with Enter)</td>
+</tr>
+<tr>
+<td><code>insw</code></td>
+<td>Install needed packages on test hosts</td>
+</tr>
+<tr>
+<td><code>cleanall</code></td>
+<td>Clean up and reinstall on test hosts</td>
+</tr>
+<tr>
+<td><code>ss</code></td>
+<td><strong>S</strong>tart <strong>s</strong>tate machines (setup threads)</td>
+</tr>
+<tr>
+<td><code>aa</code></td>
+<td><strong>A</strong>ctivate <strong>a</strong>ll resources</td>
+</tr>
+<tr>
+<td><code>dea n</code></td>
+<td>Deactivate host number <code>n</code></td>
+</tr>
+<tr>
+<td><code>acts n</code> / <code>actc n</code></td>
+<td>Activate host <code>n</code> as server or client</td>
+</tr>
+<tr>
+<td><code>rh n</code></td>
+<td>Reboot host <code>n</code></td>
+</tr>
+<tr>
+<td><code>pau n</code> / <code>res n</code></td>
+<td>Pause or resume host <code>n</code></td>
+</tr>
+<tr>
+<td><code>waa n</code> / <code>wai n</code></td>
+<td>Wait until host <code>n</code> is Active or Inactive</td>
+</tr>
+<tr>
+<td><code>wait 5</code></td>
+<td>Wait 5 seconds</td>
+</tr>
+<tr>
+<td><code>script One</code></td>
+<td>Run commands from <code>One.scr</code></td>
+</tr>
+<tr>
+<td><code>dhr</code> / <code>der</code> / <code>dir</code> / <code>dur</code></td>
+<td>Dump table rows (hosts, exports, imports, users)</td>
+</tr>
+</tbody>
+</table>
+<p>Host numbers are shown on the status display (host #0, #1, …).</p>
+<h3 id="example-workflow-manual">Example workflow (manual)</h3>
+<ol>
+<li><code>./nfsTest</code></li>
+<li><code>cleanall</code> — prepare hosts</li>
+<li><code>ss</code> — start threads</li>
+<li><code>aa</code> — turn everything on; I/O should begin</li>
+<li>Try <code>rh 1</code> to reboot a host and watch the counters</li>
+<li>Use <code>dea 2</code> then <code>actc 2</code> to deactivate and reactivate a client</li>
+</ol>
+<h3 id="example-workflow-script">Example workflow (script)</h3>
+<p>The file <code>One.scr</code> runs a fixed sequence:</p>
+<pre><code class="language-text">cleanall
+ss
+aa
+waa 0
+...
+dea 2
+actc 2
+</code></pre>
+<p>Run it with:</p>
+<pre><code class="language-text">script One
+</code></pre>
+<hr />
+<h2 id="how-it-works-simple-version">How it works (simple version)</h2>
+<p>nfsTest does not create and destroy things on the fly during a test. Instead, it <strong>builds the biggest system you configured up front</strong>, then turns pieces on and off using <strong>state machines</strong>.</p>
+<p>Each important piece (host, shared folder, mounted folder, read/write worker) has a <strong>state</strong>, such as:</p>
+<p><code>Inactive</code> → <code>Activating</code> → <code>Active</code> → <code>Pausing</code> → <code>Paused</code> → …</p>
+<p>When a read/write worker is <strong>Active</strong>, nfsTest runs <strong><code>ioEngine</code></strong> on that host. ioEngine creates a file, writes patterned data, reads it back, and verifies the bytes match. If something is wrong (I/O error, corrupted data, missing file), the test platform stops.</p>
+<p><strong>What nfsTest is checking:</strong></p>
+<ul>
+<li>If a <strong>server</strong> reboots, clients should keep working (or recover correctly).</li>
+<li>If a <strong>client</strong> reboots, its workloads stop and must be handled properly when it comes back.</li>
+<li>Shared data should stay consistent across the network.</li>
+</ul>
+<p>Logs are written to <strong><code>nfsTest.log</code></strong> in the same directory.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Things to try</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>./nfsTest.py does not exist</code></td>
+<td>Run <code>../gDS/gDSCodeGen nfsTest</code></td>
+</tr>
+<tr>
+<td>Program exits after creating <code>nfsTest.conf</code></td>
+<td>Edit the config file, then run <code>./nfsTest</code> again</td>
+</tr>
+<tr>
+<td>Cannot connect to a host</td>
+<td>Check SSH is running, IP is correct, username/password match</td>
+</tr>
+<tr>
+<td>Ping fails</td>
+<td>Fix networking between control host and test hosts first</td>
+</tr>
+<tr>
+<td>Test stops with an error</td>
+<td>Check <code>nfsTest.log</code> and the on-screen counters (bad connections, data compare errors, etc.)</td>
+</tr>
+<tr>
+<td>Stops after 30 minutes</td>
+<td>Built-in limit to avoid filling disk; restart if you need a longer run</td>
+</tr>
+</tbody>
+</table>
+<p>For more detail, run:</p>
+<pre><code class="language-bash">./nfsTest --help
+</code></pre>
+<p>Or read the documentation at the bottom of the <code>nfsTest</code> source file.</p>
+<hr />
+<h2 id="big-picture">Big picture</h2>
+<p>nfsTest is a <strong>learning tool</strong> for understanding:</p>
+<ul>
+<li>How <strong>NFS</strong> shares storage across machines</li>
+<li>How <strong>remote commands</strong> (SSH) control many computers from one place</li>
+<li>How <strong>state machines</strong> manage complex systems that grow and shrink</li>
+<li>What happens when parts of a system <strong>fail or restart</strong></li>
+</ul>
+<p>You do not need to understand every line of code to run experiments. Start with a small setup (1 server, 1–2 clients), run <code>cleanall</code>, <code>ss</code>, and <code>aa</code>, then try rebooting a host and watching the display.</p>
+<hr />
+<h2 id="quick-reference">Quick reference</h2>
+<pre><code class="language-bash"># One-time build
+../gDS/gDSCodeGen nfsTest
+
+# First run (creates config)
+./nfsTest
+
+# Edit nfsTest.conf, then:
+./nfsTest
+
+# Help
+./nfsTest --help
+</code></pre>
+<p><strong>Related site:</strong> <a href="https://TestingComplexSystems.com">TestingComplexSystems.com</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

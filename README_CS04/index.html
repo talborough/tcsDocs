@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Case Study 04 - Testing Complex Systems GitHub Repo Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Testing Complex Systems GitHub Repo Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">gDS V2</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../README_gDS/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../gDSCompiler-keywords-and-naming/" class="dropdown-item">gDSCompile Details</a>
+</li>
+                                    
+<li>
+    <a href="../gDSExer-keywords-and-naming/" class="dropdown-item">gDSExer Details</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS01/" class="nav-link">Case Study 01</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS02/" class="nav-link">Case Study 02</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../README_CS03/" class="nav-link">Case Study 03</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Case Study 04</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../README_CS03/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#what-is-pvhtsgdd" class="nav-link">What is PVHTSG.dd?</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#the-name-pvhtsg" class="nav-link">The name: PVHTSG</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#big-idea-tables-and-rows" class="nav-link">Big idea: tables and rows</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#how-the-tables-connect" class="nav-link">How the tables connect</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-six-tables" class="nav-link">The six tables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#special-words-in-the-dd-file" class="nav-link">Special words in the .dd file</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-is-a-reference" class="nav-link">What is a “reference”?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#example-reading-one-table-block" class="nav-link">Example: reading one table block</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-happens-after-you-write-the-dd-file" class="nav-link">What happens after you write the .dd file?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#why-use-a-dd-file-instead-of-writing-python-by-hand" class="nav-link">Why use a .dd file instead of writing Python by hand?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#quick-summary" class="nav-link">Quick summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="what-is-pvhtsgdd">What is <code>PVHTSG.dd</code>?</h1>
+<p>This file is a <strong>blueprint</strong> for how to store information about people, vehicles, houses, towns, states, and governors. You do not run the <code>.dd</code> file directly. A tool called <strong>gDSCompile</strong> reads it and builds a Python file (<code>PVHTSG.py</code>) that your program can actually use.</p>
+<p>Think of it like an architect’s floor plan: the <code>.dd</code> file describes the layout; the Python file is the finished building.</p>
+<hr />
+<h2 id="the-name-pvhtsg">The name: PVHTSG</h2>
+<p>The letters stand for the main things this database tracks:</p>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P</strong></td>
+<td>Person</td>
+</tr>
+<tr>
+<td><strong>V</strong></td>
+<td>Vehicle</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>House</td>
+</tr>
+<tr>
+<td><strong>T</strong></td>
+<td>Town</td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>State</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>Governor</td>
+</tr>
+</tbody>
+</table>
+<p>So <strong>PVHTSG</strong> = Person, Vehicle, House, Town, State, Governor.</p>
+<hr />
+<h2 id="big-idea-tables-and-rows">Big idea: tables and rows</h2>
+<p>If you have used a spreadsheet, you already know the idea.</p>
+<ul>
+<li>A <strong>table</strong> is like one sheet (for example, “People” or “Vehicles”).</li>
+<li>A <strong>row</strong> is one record on that sheet (one person, one car, one house).</li>
+<li>A <strong>column</strong> is one kind of fact (name, birthday, address).</li>
+</ul>
+<p>The <code>.dd</code> file says which tables exist, which columns each table has, and how tables link to each other.</p>
+<hr />
+<h2 id="how-the-tables-connect">How the tables connect</h2>
+<p>Here is the story the data tells, from small pieces up to the big picture:</p>
+<pre><code>Person  ──lives in──►  House  ──located in──►  Town  ──part of──►  State
+   │                                                      ▲
+   └──owns (can be many)──►  Vehicle                      │
+                                                          │
+Governor term  ──connects──►  Person + State  ────────────┘
+</code></pre>
+<ul>
+<li>A <strong>person</strong> can live in one <strong>house</strong> and own many <strong>vehicles</strong>.</li>
+<li>A <strong>house</strong> sits in one <strong>town</strong>.</li>
+<li>A <strong>town</strong> belongs to one <strong>state</strong>.</li>
+<li>A <strong>governor term</strong> records which <strong>person</strong> was governor of which <strong>state</strong>, and for which years.</li>
+</ul>
+<hr />
+<h2 id="the-six-tables">The six tables</h2>
+<h3 id="1-gperson-people">1. <code>gPerson</code> — People</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it stores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Person’s name (required)</td>
+</tr>
+<tr>
+<td>DOB</td>
+<td>Date of birth</td>
+</tr>
+<tr>
+<td>House reference</td>
+<td>Which house they live in</td>
+</tr>
+<tr>
+<td>Vehicle references</td>
+<td>List of cars they own</td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Row status</td>
+<td>Internal flag (often unused)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-gvehicle-vehicles">2. <code>gVehicle</code> — Vehicles</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it stores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Optional label</td>
+</tr>
+<tr>
+<td>Year</td>
+<td>Model year</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Kind of vehicle (car, truck, etc.)</td>
+</tr>
+<tr>
+<td>VIN</td>
+<td>Vehicle ID number</td>
+</tr>
+</tbody>
+</table>
+<p>There is also an <strong>index</strong> on vehicle type so you can quickly find all vehicles of a given type.</p>
+<h3 id="3-ghouse-houses">3. <code>gHouse</code> — Houses</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it stores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Address</td>
+<td>Street address</td>
+</tr>
+<tr>
+<td>Town reference</td>
+<td>Which town the house is in</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-gtown-towns">4. <code>gTown</code> — Towns</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it stores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Town name</td>
+</tr>
+<tr>
+<td>Zip code</td>
+<td>Postal code</td>
+</tr>
+<tr>
+<td>State reference</td>
+<td>Which state the town is in</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-gstate-states">5. <code>gState</code> — States</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it stores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>State name (required)</td>
+</tr>
+</tbody>
+</table>
+<p>There is an <strong>index</strong> on state name so you can look up a state by name quickly.</p>
+<h3 id="6-ggovterm-governor-terms">6. <code>gGovTerm</code> — Governor terms</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>What it stores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State reference</td>
+<td>Which state</td>
+</tr>
+<tr>
+<td>Person reference</td>
+<td>Who was governor</td>
+</tr>
+<tr>
+<td>Start year</td>
+<td>When the term began</td>
+</tr>
+<tr>
+<td>End year</td>
+<td>When the term ended</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="special-words-in-the-dd-file">Special words in the <code>.dd</code> file</h2>
+<p>These are the main commands. Lines starting with <code>#</code> are comments (notes for humans).</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Plain English</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defineTable</code></td>
+<td>Start a new table.</td>
+</tr>
+<tr>
+<td><code>endTable</code></td>
+<td>Finish that table.</td>
+</tr>
+<tr>
+<td><code>defineName</code></td>
+<td>The main name field for a row. If there is no default value, you <strong>must</strong> provide a name when adding a row.</td>
+</tr>
+<tr>
+<td><code>defineColumn</code></td>
+<td>A regular piece of data (text, number, date, etc.).</td>
+</tr>
+<tr>
+<td><code>defineOneRef</code></td>
+<td>A link to <strong>one</strong> row in another table (like “this house is in town #3”).</td>
+</tr>
+<tr>
+<td><code>defineManyRefs</code></td>
+<td>Links to <strong>many</strong> rows in another table (like “this person owns cars #1, #4, and #7”).</td>
+</tr>
+<tr>
+<td><code>defineIndexOneRef</code></td>
+<td>A fast lookup: given a value (like a state name), find the matching row.</td>
+</tr>
+<tr>
+<td><code>defineIndexManyRefs</code></td>
+<td>A fast lookup: given a value (like vehicle type), find <strong>all</strong> matching rows.</td>
+</tr>
+<tr>
+<td><code>defineRowStatus</code></td>
+<td>An extra column used internally; often left as <code>None</code>.</td>
+</tr>
+<tr>
+<td><code>None</code> (as a default)</td>
+<td>This field is optional — you can skip it.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="what-is-a-reference">What is a “reference”?</h2>
+<p>A reference is not the full object stored twice. It is a <strong>pointer</strong> — a row number that says “go look in the other table.”</p>
+<p>Example:</p>
+<ul>
+<li>Row 0 in <code>gPerson</code> might have <code>gPerson_gHouse_Ref = 2</code></li>
+<li>That means: “this person lives in row 2 of the <code>gHouse</code> table”</li>
+<li>To get the address, you look up row 2 in <code>gHouse</code></li>
+</ul>
+<p>This is how relational databases avoid repeating the same address on every person who lives there.</p>
+<hr />
+<h2 id="example-reading-one-table-block">Example: reading one table block</h2>
+<pre><code class="language-text">defineTable     gPerson
+defineName      gPerson_Name
+defineColumn    gPerson_DOB
+defineOneRef    gPerson_gHouse_Ref  gHouse      None
+defineManyRefs  gPerson_gVehicle_Refs           gVehicle
+defineColumn    gPerson_Gender                  None
+defineRowStatus gPerson_RowStatus               None
+endTable
+</code></pre>
+<p>In plain language:</p>
+<ol>
+<li>Create a table called <code>gPerson</code>.</li>
+<li>Every person needs a name.</li>
+<li>Store their birthday.</li>
+<li>Link to one house (optional, because of <code>None</code>).</li>
+<li>Link to zero or more vehicles.</li>
+<li>Gender is optional.</li>
+<li>Row status is optional.</li>
+<li>Done with this table.</li>
+</ol>
+<hr />
+<h2 id="what-happens-after-you-write-the-dd-file">What happens after you write the <code>.dd</code> file?</h2>
+<ol>
+<li>You run <strong>gDSCompile</strong> on <code>PVHTSG.dd</code>.</li>
+<li>It generates <code>**PVHTSG.py</code>** — Python code with lists for each column and helper functions such as:</li>
+<li><code>gPerson_AddARow(...)</code> — add a new person</li>
+<li><code>gPerson_DumpRows()</code> — print all people</li>
+<li><code>gPerson_WriteToFile(...)</code> / <code>gPerson_ReadFromFile(...)</code> — save and load data as JSON</li>
+<li>Your program imports that file:
+  <code>python
+   from PVHTSG import *</code></li>
+</ol>
+<p>You edit the <code>**.dd</code> file<strong> when you want to change the design. You use the <code>**.py</code> file</strong> when you want to add or read data.</p>
+<hr />
+<h2 id="why-use-a-dd-file-instead-of-writing-python-by-hand">Why use a <code>.dd</code> file instead of writing Python by hand?</h2>
+<ul>
+<li><strong>One place to design</strong> — all tables and links are visible in one short file.</li>
+<li><strong>Fewer mistakes</strong> — the compiler generates matching add, delete, save, and load code for every table.</li>
+<li><strong>Easier to change</strong> — add a column in the <code>.dd</code> file, recompile, and the Python updates consistently.</li>
+</ul>
+<hr />
+<h2 id="quick-summary">Quick summary</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PVHTSG.dd</code></td>
+<td>Blueprint: what tables exist and how they connect</td>
+</tr>
+<tr>
+<td><code>PVHTSG.py</code></td>
+<td>Working code: lists, add-row functions, save/load</td>
+</tr>
+<tr>
+<td>Your program</td>
+<td>Imports <code>PVHTSG.py</code> and stores real data</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>.dd</code> file is not a program. It is a <strong>recipe</strong> that tells gDSCompile how to build a small database for people, vehicles, houses, towns, states, and governors.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
